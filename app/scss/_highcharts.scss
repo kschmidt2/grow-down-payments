@@ -83,7 +83,8 @@
   .highcharts-yaxis-labels {
     fill: $slate-secondary-5;
     // use this to change the axis label
-    & span:first-child {
+    & span:last-child {
+      margin-left: 10px !important;
       &:after {
         content: "%";
     }
@@ -264,15 +265,24 @@
   }
   
   .highcharts-point {
-    stroke-width: 0;
+    stroke-width: 1;
+    stroke: #fff;
   }
   
   .highcharts-dense-data .highcharts-point {
     stroke-width: 0;
   }
+
+  .highcharts-data-labels {
+    & .highcharts-data-label:last-child {
+      @include x-small {
+        margin-top: 30px;
+      }
+    }
+  }
   
   .highcharts-data-label {
-    font-size: 0.9em;
+    font-size: 12px;
     font-weight: bold;
   }
   

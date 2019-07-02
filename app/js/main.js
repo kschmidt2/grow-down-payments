@@ -4,11 +4,16 @@
 
 // console.log(Highcharts);
 
+Highcharts.setOptions({
+    lang: {
+      thousandsSep: ','
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     const myChart = Highcharts.chart('chart-container', {
         chart: {
-            type: 'bar',
+            type: 'variwide',
             styledMode: true,
             spacingBottom: 25,
             spacingRight: 100
@@ -16,29 +21,52 @@ document.addEventListener('DOMContentLoaded', function () {
         title: {
             text: null
         },
+        data: {
+            googleSpreadsheetKey: '1BV34R-0-WzaE9J2oqWVIIxpWYyXe7MV6LVSNhg76OvA',
+            googleSpreadsheetWorksheet: 1,
+            endColumn: 2,
+            endRow: 5
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    useHTML: true,  
+                    format: '${point.z:,.0f}',
+                    allowOverlap: true,
+                    verticalAlign: 'top',
+                    align: 'left'
+                }
+            }
+        },
         legend: {
-            align: 'right',
-            symbolRadius: 0,
-            verticalAlign: 'top',
-            x: 10,
-            itemMarginTop: -10
+            enabled: false
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            labels: {
+                overflow: 'allow',
+                padding: 20,
+                style: {
+                    whiteSpace: 'wrap'
+                }
+            }
         },
         yAxis: {
             title: false,
             labels: {
                 useHTML: true,
                 overflow: 'allow'
-            }
+            },
+            max: 25
         },
         credits: {
             enabled: false
         },
         tooltip: {
             shadow: false,
-            padding: 10
+            padding: 10,
+            pointFormat: '<b>Median percentage:</b> {point.y:.0f}%<br>' +
+                '<b>Median down payment:</b> ${point.z}<br>'
         },
         responsive: {
             rules: [{
@@ -58,13 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
               }
             }]
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 6, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
+        }
     });
 });
