@@ -78,6 +78,9 @@
     fill: $slate-secondary-6;
     cursor: default;
     font-size: 14px;
+    @include x-small {
+      font-size: 11px;
+    }
   }
   
   .highcharts-yaxis-labels {
@@ -205,8 +208,15 @@
   /* Series options */
   /* Default colors */
   .highcharts-color-0 {
-    fill: $green-primary;
+    fill: $green-secondary-3;
     stroke: $green-primary;
+  }
+
+  #chart-container-2 {
+    & .highcharts-color-0 {
+      fill: $green-secondary-5;
+      stroke: $green-primary;
+    }
   }
   
   .highcharts-color-1 {
@@ -265,7 +275,7 @@
   }
   
   .highcharts-point {
-    stroke-width: 1;
+    stroke-width: 0;
     stroke: #fff;
   }
   
@@ -273,10 +283,10 @@
     stroke-width: 0;
   }
 
-  .highcharts-data-labels {
-    & .highcharts-data-label:last-child {
-      @include x-small {
-        margin-top: 30px;
+  #chart-container {
+    & .highcharts-data-labels {
+      & .highcharts-data-label:last-child {
+          margin-top: 10px;
       }
     }
   }
