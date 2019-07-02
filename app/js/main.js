@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
             type: 'variwide',
             styledMode: true,
             spacingBottom: 25,
-            spacingRight: 100
+            spacingRight: 100,
+            marginLeft: 32
         }, 
         title: {
             text: null
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     allowOverlap: true,
                     verticalAlign: 'top',
                     align: 'left',
-                    y: 3
+                    y: 5
                 },
                 pointPadding: .02,
                 colorIndex: 3
