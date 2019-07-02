@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
       series: {
         dataLabels: {
           enabled: true,
-          useHTML: true,
+          // useHTML: true,  
           format: '${point.z:,.0f}',
           allowOverlap: true,
           verticalAlign: 'top',
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
       series: {
         dataLabels: {
           enabled: true,
-          useHTML: true,
+          // useHTML: true,  
           format: '${point.z:,.0f}',
           allowOverlap: true,
           verticalAlign: 'top',

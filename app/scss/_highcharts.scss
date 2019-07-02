@@ -136,6 +136,8 @@
     pointer-events: none;
     white-space: nowrap;
     transition: stroke 150ms;
+    position: absolute;
+    z-index: 1000;
   }
 
   .highcharts-tooltip ul {
@@ -286,7 +288,9 @@
   #chart-container {
     & .highcharts-data-labels {
       & .highcharts-data-label:last-child {
-          margin-top: 10px;
+        & text {
+          transform: translate(0, 20px)
+        }
       }
     }
   }
