@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tooltip: {
             shadow: false,
             padding: 10,
-            pointFormat: '<b>Median percentage:</b> {point.y:.0f}%<br>' +
+            pointFormat: '<b>Median percentage:</b> {point.y:.1f}%<br>' +
                 '<b>Median down payment:</b> ${point.z}<br>'
         },
         responsive: {
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tooltip: {
             shadow: false,
             padding: 10,
-            pointFormat: '<b>Median percentage:</b> {point.y:.0f}%<br>' +
+            pointFormat: '<b>Median percentage:</b> {point.y:.1f}%<br>' +
                 '<b>Median down payment:</b> ${point.z}<br>'
         },
         responsive: {
