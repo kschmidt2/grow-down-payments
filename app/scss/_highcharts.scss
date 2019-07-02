@@ -85,6 +85,9 @@
   
   .highcharts-yaxis-labels {
     fill: $slate-secondary-5;
+    @include x-small {
+      font-size: 14px;
+    }
     // use this to change the axis label
     & span:last-child {
       margin-left: 10px !important;
